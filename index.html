@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f1f4;
+            color: #2d2f33;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* hero 区 — 干净、留白、带一点叙述感 */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 3rem 2.5rem 2.8rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e5ea;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f2228;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #6b7078;
+            border-bottom: 1px solid #eaeced;
+            display: inline-block;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 1rem auto 0;
+            font-size: 1.05rem;
+            color: #3e4249;
+        }
+
+        .hero p a {
+            color: #1f2228;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #b8bcc4;
+            font-weight: 500;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .hero p a:hover {
+            text-decoration-color: #1f2228;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.8rem 2rem;
+            border: 1px solid #e2e5ea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 0 0 1px rgba(0, 0, 0, 0.01);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03), 0 0 0 1px #d0d4dc;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #1f2228;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #edeff2;
+        }
+
+        .card p, .card li {
+            font-size: 0.95rem;
+            color: #3d4149;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            padding: 0.2rem 0 0.2rem 1.2rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #9aa0aa;
+            font-weight: 700;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #f0f1f4;
+            border-radius: 30px;
+            padding: 0.1rem 0.9rem;
+            font-size: 0.75rem;
+            color: #5a5f68;
+            letter-spacing: 0.02em;
+            margin-top: 0.8rem;
+        }
+
+        /* 使用建议 — 独立卡片，宽列 */
+        .suggestion-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem 2rem;
+            border: 1px solid #e2e5ea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2.2rem;
+        }
+
+        .suggestion-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1f2228;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #edeff2;
+            padding-bottom: 0.4rem;
+        }
+
+        .suggestion-card .sug-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.9rem;
+            align-items: flex-start;
+        }
+
+        .suggestion-card .sug-num {
+            background: #e8eaee;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #3d4149;
+            flex-shrink: 0;
+        }
+
+        .suggestion-card .sug-text {
+            font-size: 0.95rem;
+            color: #3d4149;
+            padding-top: 0.2rem;
+        }
+
+        /* FAQ 摘要 — 紧凑样式 */
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 2rem 2rem;
+            border: 1px solid #e2e5ea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2.8rem;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1f2228;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #edeff2;
+            padding-bottom: 0.4rem;
+        }
+
+        .faq-item {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f0f2f5;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #1f2228;
+            font-size: 0.93rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-a {
+            font-size: 0.88rem;
+            color: #5a5f68;
+        }
+
+        /* 页脚 — 极简 */
+        .footer-note {
+            text-align: center;
+            font-size: 0.83rem;
+            color: #8d929c;
+            padding: 1rem 0 0.5rem;
+            border-top: 1px solid #dcdfe4;
+            margin-top: 1rem;
+        }
+
+        .footer-note a {
+            color: #50545c;
+            text-decoration: none;
+            border-bottom: 1px dotted #c2c6ce;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #50545c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .card {
+                padding: 1.4rem;
+            }
+
+            .suggestion-card {
+                padding: 1.4rem;
+            }
+
+            .faq-mini {
+                padding: 1.2rem 1.2rem 1.5rem;
+            }
+
+            .suggestion-card .sug-item {
+                gap: 0.8rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero 叙述区 -->
+    <div class="hero">
+        <h1>爱游戏</h1>
+        <div class="sub">一个关于游戏内容与体验的索引</div>
+        <p>
+            在数字生活的缝隙里，游戏常常扮演一种安静的陪伴。有人沉迷叙事，有人偏爱策略，也有人只是想在疲惫的傍晚找一个可以放松的角落。如果你也是这样一类人——不追求速通，更在意过程中那些微小的趣味——那么<a href="https://cn-lovegame.com">爱游戏</a>或许恰好能提供一些值得停留的线索。它不定义什么是好游戏，只是记录那些让人忍不住多玩一会儿的作品。
+        </p>
+    </div>
+
+    <!-- 两列卡片：摘要 + 亮点 -->
+    <div class="card-grid">
+        <div class="card">
+            <h3>摘要 · 它是什么</h3>
+            <p>爱游戏是一个围绕游戏内容展开的信息节点，收录了从独立作品到经典重制的各类碎片。与其说它是一个评测站，不如说是一份带着个人温度的笔记合集——关注玩法、氛围、以及游戏里那些容易被忽略的细节。这里没有排行榜，只有愿意被反复提及的片段。</p>
+            <span class="tag">内容索引 · 非商业</span>
+        </div>
+        <div class="card">
+            <h3>亮点 · 值得留意的部分</h3>
+            <ul>
+                <li>不刻意追逐热点，更倾向于沉淀过的作品</li>
+                <li>每篇记录都带有具体的体验场景，而非泛泛而谈</li>
+                <li>涵盖冷门佳作与被人遗忘的系列前作</li>
+                <li>语言平实，不滥用游戏术语，普通读者也能理解</li>
+            </ul>
+            <span class="tag">视角 · 日常化</span>
+        </div>
+    </div>
+
+    <!-- 使用建议（卡片式） -->
+    <div class="suggestion-card">
+        <h3>使用建议 · 怎样读更自然</h3>
+        <div class="sug-item">
+            <span class="sug-num">1</span>
+            <span class="sug-text">不必从头到尾按顺序读。挑一个你最近玩过的类型，或者完全没听过的名字，直接点进去看看。</span>
+        </div>
+        <div class="sug-item">
+            <span class="sug-num">2</span>
+            <span class="sug-text">如果你恰好收藏了一些老游戏，不妨对照着翻一翻——有些记录可能会让你想起自己当时为什么喜欢它。</span>
+        </div>
+        <div class="sug-item">
+            <span class="sug-num">3</span>
+            <span class="sug-text">页面里提到的版本信息多为个人备注，建议以实际发行平台为准。遇到感兴趣的作品，可以再去官方渠道核实细节。</span>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h3>一些常见疑问 · 简短回答</h3>
+        <div class="faq-item">
+            <div class="faq-q">爱游戏会更新游戏库吗？</div>
+            <div class="faq-a">内容不定期补充，没有固定频率。所有新增记录都基于实际游玩或重新体验后的感受。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">这里推荐的都是正版游戏吗？</div>
+            <div class="faq-a">所提及的作品均以正式发售版本为主，记录中不包含任何破解或非授权渠道的信息。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">我能通过这个页面直接下载游戏吗？</div>
+            <div class="faq-a">不能。爱游戏是一个内容索引，不提供文件下载或外部商店跳转链接。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">页面里的观点代表最终评价吗？</div>
+            <div class="faq-a">每一篇都只是记录者的个人视角。游戏感受本就因人而异，读到的内容仅作参考。</div>
+        </div>
+    </div>
+
+    <!-- 页脚 — 仅包含必要的链接 -->
+    <div class="footer-note">
+        更多内容 · <a href="https://cn-lovegame.com">爱游戏</a>　|　记录 · 而非定义
+    </div>
+</div>
+</body>
+</html>

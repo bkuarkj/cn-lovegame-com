@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bkuarkj.github.io/cn-lovegame-com/sitemap.xml
